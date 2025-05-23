@@ -1,0 +1,23 @@
+{
+  "dependencies": {
+    "next": "15.1.8",
+    "react": "19.1.0",
+    "react-dom": "19.1.0"
+  },
+  "devDependencies": {
+    "@netlify/plugin-nextjs": "5.11.2",
+    "@types/node": "22.15.21",
+    "@types/react": "19.1.5",
+    "@types/react-dom": "19.1.5",
+    "typescript": "5.8.3"
+  },
+  "scripts": {
+    "build": "next build",
+    "dev": "next dev",
+    "start": "next start"
+  },
+  "name": "zd-372378",
+  "private": true,
+  "type": "module",
+  "version": "0.1.0"
+}
