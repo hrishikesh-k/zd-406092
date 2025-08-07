@@ -7,6 +7,8 @@ export default async function handler(request: Request, context: Context) {
   if (originalUrl && rewrite) {
     return Response.redirect(`${originalUrl}?x-redirected=true`)
   }
+
+  return new URL(rewrite || '')
 }
 
 export const config: Config = {
