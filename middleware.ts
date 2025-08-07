@@ -6,7 +6,9 @@ export function middleware(request: NextRequest) {
   headers.set('x-middleware-original-url', request.url)
   headers.set('x-middleware-rewrite-2', new URL('/page-1/', request.url).toString())
   const res = NextResponse.next({
-    headers
+    request: {
+      headers
+    }
   })
   console.log(res)
   return NextResponse.rewrite(new URL('/page-1/', request.url))
