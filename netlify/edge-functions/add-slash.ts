@@ -14,6 +14,8 @@ export default async function handler(request: Request, context: Context) {
     }
   }
 
+  console.log(context.url)
+
   if (!context.url.pathname.endsWith('/') && !context.url.pathname.split('/').pop()?.includes('.')) {
     return Response.redirect(`${context.url.origin}${context.url.pathname}/${context.url.search}`, 301)
   }
