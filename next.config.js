@@ -1,6 +1,6 @@
 /** @type {import('next').NextConfig} */
 const config = {
-  trailingSlash: true
+  trailingSlash: false
 }
 
 export default config

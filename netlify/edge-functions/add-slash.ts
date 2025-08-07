@@ -1,13 +1,7 @@
-import type { Config, Context } from '@netlify/edge-functions'
+import type { Config } from '@netlify/edge-functions'
 
-export default async function handler(request: Request, context: Context) {
-  const rewrite = request.headers.get('x-middleware-rewrite')
-  if (rewrite) {
-    return Response.redirect(context.url.searchParams.get('x-middleware-original-url') || rewrite)
-  }
-}
+export { addSlash as default } from 'https://esm.sh/gh/ascorbic/slash-edge/mod.ts'
 
 export const config: Config = {
-  excludedPath: '/_next/*',
   path: '/*'
 }
