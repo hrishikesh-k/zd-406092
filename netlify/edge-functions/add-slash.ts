@@ -14,7 +14,7 @@ export default async function handler(request: Request, context: Context) {
     }
   }
 
-  console.log(context.url)
+  console.log(context.url, request.headers)
 
   if (!context.url.pathname.endsWith('/') && !context.url.pathname.split('/').pop()?.includes('.')) {
     return Response.redirect(`${context.url.origin}${context.url.pathname}/${context.url.search}`, 301)
@@ -37,5 +37,6 @@ export default async function handler(request: Request, context: Context) {
 }
 
 export const config: Config = {
+  excludedPath: '/_next/*',
   path: '/*'
 }
